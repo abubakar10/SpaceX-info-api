@@ -1,0 +1,281 @@
+/* .container {
+   
+} */
+
+.sidebar {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 60px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s ease-in-out;
+    z-index: 1000;
+    visibility: visible;
+    
+    
+}
+
+.sidebar.open {
+    width: 250px;
+    /* overflow: hidden; */
+}
+
+.sidebar.closed {
+    width: 60px;
+}
+
+/* Sidebar Content */
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Sidebar Logo */
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    
+    transition: opacity 0.3s ease-in-out;
+}
+.sidebar.closed .sidebar-logo {
+    display: flex;
+    align-items: center;
+    padding: 0px 11px;
+    
+    transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar-logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.sidebar-logo span {
+    font-size: 1.5rem;
+    color: rgb(54, 49, 49);
+    margin-left: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.sidebar.open .sidebar-logo span {
+    opacity: 1;
+}
+
+/* Sidebar Navigation */
+.sidebar-nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 9px;
+    margin: 6px 0;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    color: rgb(54, 49, 49);
+    text-decoration: none;
+    padding: 2px 5px;
+    border-radius: 12px;
+    transition: background-color 0.2s ease;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar-nav li.active,
+.sidebar-nav li a.active {
+    background-color: rgba(89, 50, 234, 1);
+    color: white;
+}
+.sidebar.open .sidebar-nav li a:hover {
+    background-color: rgba(89, 50, 234, 1);
+    transition: background-color 0.2s ease;
+}
+/* Additional active and hover styles for enhanced feedback */
+.sidebar-nav li a:hover,
+.sidebar-nav li a.active:hover {
+    background-color: rgba(89, 50, 234, 1) !important; /* Hover color */
+    color: white !important; /* Text color on hover */
+}
+.sidebar-nav li a.active i {
+    color: white; /* Icon color for active link */
+}
+
+.sidebar-nav li a i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+}
+.sidebar-nav li a i,
+.sidebar-nav li.active i {
+    font-size: 24px;
+    color: rgba(145, 151, 179, 1);
+    width: 40px;
+    height: 40px;
+}
+
+.sidebar-nav li a.active i {
+    color: white;
+}
+
+.sidebar-nav li a:hover {
+    background-color: rgba(89, 50, 234, 1);
+    color: white;
+}
+
+/* Sidebar Upgrade and Footer */
+.sidebar-upgrade {
+    margin: 0 20px;
+}
+
+.sidebar.open .sidebar-upgrade button {
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(to bottom right, rgba(234, 171, 240, 1), rgba(70, 35, 233, 1));
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 150px;
+}
+
+.sidebar-upgrade button p {
+    background-color: #fff;
+    color: rgba(73, 37, 233, 1);
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.sidebar.open .sidebar-footer {
+    padding: 20px 0px;
+    align-items: center;
+    padding: 0px 24px;
+}
+.sidebar.closed .sidebar-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-footer .profile {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 14px;
+     margin-top: 10px;
+    /* margin-bottom: 50px;  */
+}
+.sidebar.closed .sidebar-footer .profile{
+    margin-top: 300px;
+}
+.sidebar-footer .profile span {
+    font-size: 12px;
+    font-weight: lighter;
+    color: grey;
+}
+
+/* Toggle Button */
+.toggle-button {
+    position: absolute;
+    top: 20px;
+    right: -25px;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    color: black;
+    border: 1px solid grey;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.toggle-button:hover {
+    background-color: rgba(89, 50, 234, 1);
+    color: #fff;
+}
+
+.toggle-buttons {
+    width: 0;
+    visibility: hidden;
+}
+
+/* Main Content */
+main {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 20px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.sidebar.open + main {
+    margin-left: 250px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 991px) {
+    .sidebar {
+        width: 0;
+        visibility: hidden;
+        position: absolute;
+        z-index: 2;
+        height: 100%;
+    }
+
+    .sidebar.open {
+        width: 30%;
+        visibility: visible;
+        background-color: #fff;
+        box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.5);
+    }
+    .sidebar.open .sidebar-upgrade button {
+        width: 100%;
+        height: 120px;
+        background: linear-gradient(to bottom right, rgba(234, 171, 240, 1), rgba(70, 35, 233, 1));
+        color: white;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        padding: 10px;
+        margin-top: 50px;
+    }
+
+    .toggle-buttons {
+        visibility: visible;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        color: black;
+        border-radius: 20px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid grey;
+    }
+    .toggle-buttons:hover{
+        background-color: rgba(89, 50, 234, 1);
+        color: #fff;
+        border: none;
+    }
+}

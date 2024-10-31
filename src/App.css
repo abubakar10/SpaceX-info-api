@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("./Assets/Fonts/Poppins-Regular.ttf");
+}
+body{
+  font-family: "Poppins";
+  background-color: rgb(237, 238, 243);
+}
+
+.app {
+  display: flex;
+}
+/* main {
+   flex-grow: 1;
+  padding: 20px;
+  background-color: #f4f4f4;  
+} */
