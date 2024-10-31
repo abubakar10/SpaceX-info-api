@@ -4,7 +4,9 @@
   background-color: #fff;
   border-radius: 30px;
   /* margin: 30px auto; */
-  width: 100%;
+    max-width: 1200px;
+    width: 100%;         /* Ensures it takes up available width */
+    overflow-y: auto;
 }
 
 .history-table-container h2 {
@@ -191,5 +193,12 @@ button{
   padding: 10px;
   background-color: rgba(249, 251, 255, 1);
 }
+/* @media (max-width: 1000px)  {
+  .history-table-container{
+    max-height: 300px;
+    width: 100%;        
+    overflow-x: auto;    
+  }
+} */
 
 

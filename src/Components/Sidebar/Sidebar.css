@@ -6,7 +6,7 @@
     position: relative;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     width: 60px;
     background-color: #fff;
     display: flex;
@@ -19,7 +19,7 @@
 }
 
 .sidebar.open {
-    width: 250px;
+    width: 30%;
     /* overflow: hidden; */
 }
 
@@ -232,15 +232,16 @@ main {
 /* Responsive Styles */
 @media screen and (max-width: 991px) {
     .sidebar {
+        position: fixed;
         width: 0;
         visibility: hidden;
-        position: absolute;
+        /* position: absolute; */
         z-index: 2;
         height: 100%;
     }
 
     .sidebar.open {
-        width: 30%;
+        /* width: 30%; */
         visibility: visible;
         background-color: #fff;
         box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.5);
@@ -278,4 +279,20 @@ main {
         color: #fff;
         border: none;
     }
+}
+@media screen and (max-width: 600px){
+    .sidebar.open {
+        width: 40%;
+        
+        
+    }
+
+}
+@media screen and (max-width: 470px){
+    .sidebar.open {
+        width: 60%;
+        
+        
+    }
+
 }
