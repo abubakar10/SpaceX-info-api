@@ -1,0 +1,96 @@
+.header {
+    background: linear-gradient(135deg, rgba(89, 50, 234, 1), rgba(234, 171, 240, 0.8));
+    color: white;
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../../Assets/Icons/Spacexstarship.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+.header-title h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-title p {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.header-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.header-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.header-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 40px 0;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 0 15px;
+    }
+    
+    .header-title h1 {
+        font-size: 2.5rem;
+    }
+    
+    .header-title p {
+        font-size: 1.1rem;
+    }
+} 
